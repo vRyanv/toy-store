@@ -1,0 +1,114 @@
+<div style="width: 100%;height: 4rem;background-color: white; position: fixed; z-index: 1;">
+    <div class="title-header animate-character">Product</div>
+    <nav class="navbar" style="float: right;right: 11rem;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="d-flex" id="search_box_product" role="search">
+                    <input class="form-control me-2" id="txt_search_pro" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" id="btn_search_product">Search</button>
+                    <button class="btn btn-warning btn-custom" data-bs-toggle="modal" data-bs-target="#new_pro_model" style="width: 8rem;margin-left: 2rem">New</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container-product" style="padding-top: 5rem">
+    <% for (let i = 0;i< proList.length;i++){ %>
+        <div class="item">
+            <div class="thumbnail">
+                <img class="group list-group-image pro-image" src="/images/<%= proList[i].pro_image %>" alt="">
+            </div>
+            <div class="infor-product">
+                <div>
+                    <h5 class="pro-name"><%= proList[i].pro_name %></h5>
+                </div>
+                <div class="caption">
+                    <h6>Category: <%= proList[i].cate_name %></h6>
+                    <h6>Supplier: <%= proList[i].sup_name %></h6>
+                    <h6>Price: <%= proList[i].pro_price %></h6>
+                    <h6>Quantity: <%= proList[i].quantity %></h6>
+                </div>
+                <div><button class="btn btn-warning btn-delete-pro btn-custom" data-pro-id="<%= proList[i].pro_id %>">Delete</button></div>
+            </div>
+        </div>
+    <%}%>
+</div>
+</div>
+<!-- model-->
+<div class="modal fade" id="new_pro_model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog  modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div style="padding:1rem">
+                <form action="/product-new" method="post" id="pro_form">
+                    <div class="mb-4">
+                        <label for="pro_name" class="form-label">Name</label>
+                        <input type="text" name="proName" class="form-control" id="pro_name" placeholder="product name" style="display: inline-block" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="pro_cate" class="form-label">Category</label>
+                        <select class="form-control" name="cateId" id="pro_cate" style="display: inline-block" required>
+                            <option value="">Choose category</option>
+                            <% for (let i=0;i < cateList.length;i++) {%>
+                                <option value="<%= cateList[i].cate_id %>"><%= cateList[i].cate_name %></option>
+                            <% }%>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="pro_sup" class="form-label">Supplier</label>
+                        <select class="form-control" name="supId" id="pro_sup" style="display: inline-block" required>
+                            <option value="">Choose supplier</option>
+                            <% for (let i=0;i < supList.length;i++) {%>
+                                <option value="<%= supList[i].sup_id %>"><%= supList[i].sup_name %></option>
+                            <% }%>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="pro_price" class="form-label">Price</label>
+                        <input type="number" name="price" class="form-control" id="pro_price" placeholder="price" style="display: inline-block" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="pro_quantity" class="form-label">Quantity</label>
+                        <input type="number" name="quantity" class="form-control" id="pro_quantity" placeholder="quantity" style="display: inline-block" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="img_preview" class="form-label" id="lb_img">Image</label>
+                        <div style="display: block">
+                            <img src="/images/preview.png" alt="..." class="img-thumbnail" id="img_preview" style="width: 13rem;" >
+                        </div>
+                        <input type="file" name="proImage" id="pro_img" hidden>
+                        <button type="button" class="btn btn-primary mt-3" id="btn_open_dialog_image">Choose image</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- confirm delete model -->
+<button type="button" id="btn_show_confirm_delete" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" hidden>
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Confirm delete</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="content_confirm_delete">
+                Delete this product
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="btn_ok_delete" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- confirm delete model -->

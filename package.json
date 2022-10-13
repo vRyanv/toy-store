@@ -1,0 +1,32 @@
+{
+  "name": "toy-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vRyanv/toy-store.git"
+  },
+  "author": "Duy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vRyanv/toy-store/issues"
+  },
+  "homepage": "https://github.com/vRyanv/toy-store#readme",
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.8.0"
+  }
+}

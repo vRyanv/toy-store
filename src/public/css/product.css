@@ -1,0 +1,43 @@
+.item{
+    display: inline-block;
+    height: 14rem;
+    width: 30rem;
+    padding: 0;
+    margin-top: 5px;
+    margin: 15px;
+    box-shadow: 1px 5px 15px #ccc;
+}
+.pro-name{
+    color: rgb(253, 11, 85);
+}
+.thumbnail{
+    margin-bottom: 0px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    display: inline-block;
+}
+
+img{
+    vertical-align: baseline;
+}
+
+.btn-custom{
+    color: black;
+    background: #9152f8;
+    background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
+    background: -o-linear-gradient(bottom, #7579ff, #b224ef);
+    background: -moz-linear-gradient(bottom, #7579ff, #b224ef);
+    background: linear-gradient(bottom, #7579ff, #b224ef);
+}
+
+.btn-custom:hover{
+    color: whitesmoke;
+}
+
+.pro-image{
+    width: 16rem;
+    height: 14rem;
+    border: solid rgb(144, 84, 248);
+}

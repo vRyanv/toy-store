@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>New Shop</title>
+    <link rel="icon" href="/images/icon-web.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="/css/login/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/css/login/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/loading.animation.css">
+    <!--===============================================================================================-->
+    <style>
+        .hello {
+            position: absolute;
+            top: 26%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5vw;
+            -webkit-animation-name: wave;
+            animation-name: wave;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+            font-family: "Righteous", cursive;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: black;
+        }
+
+        .hello:nth-of-type(1) {
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-delay: 0.55s;
+            animation-delay: 0.55s;
+        }
+
+        .hello:nth-of-type(2) {
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+        }
+
+        .hello:nth-of-type(3) {
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-delay: 0.05s;
+            animation-delay: 0.05s;
+        }
+
+        .hello:nth-of-type(4) {
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-delay: -0.2s;
+            animation-delay: -0.2s;
+        }
+
+        @-webkit-keyframes wave {
+            40%, 50% {
+                transform: translate(-50%, -65%) scale(1.05);
+            }
+            0%, 90%, 100% {
+                transform: translate(-50%, -45%) scale(0.95);
+            }
+        }
+
+        @keyframes wave {
+            40%, 50% {
+                transform: translate(-50%, -65%) scale(1.05);
+            }
+            0%, 90%, 100% {
+                transform: translate(-50%, -45%) scale(0.95);
+            }
+        }
+
+        .error-login{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--    animation loading-->
+<%- include('loadingAnimation.ejs') %>
+<!--    animation loading-->
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('/css/login/images/bg-01.jpg');">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form" id="shop_form" action="/shop-add" method="post">
+					<span class="login100-form-logo">
+						<div class='hello' style='color: #7c4dff'>ATN</div>
+						<div class='hello' style='color: #0091ea'>ATN</div>
+						<div class='hello' style='color: #ff9100'>ATN</div>
+						<div class='hello' style='color: #ff1744'>ATN</div>
+					</span>
+
+                <span class="login100-form-title p-b-34 p-t-27">
+						NEW SHOP
+                </span>
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" id="txt_shop_name" placeholder="Shop name" required>
+                </div>
+
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" id="txt_address" name="pass" placeholder="Address" required>
+                </div>
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        Create
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script src="/css/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="/css/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="/css/login/vendor/bootstrap/js/popper.js"></script>
+<script src="/css/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="/css/login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="/css/login/vendor/daterangepicker/moment.min.js"></script>
+<script src="/css/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="/css/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="/css/login/js/main.js"></script>
+<script src="/js/shop.js"></script>
+</body>
+</html>

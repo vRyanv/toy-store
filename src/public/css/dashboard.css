@@ -1,0 +1,82 @@
+
+#root_body{
+    height: 100rem;
+}
+
+#block_dashboard{
+    position: fixed;
+    right: 0;
+    top: 10%;
+}
+
+#dashboard{
+    min-height: 40rem;
+    width: 6rem;
+    border-radius: 3rem;
+    background: -webkit-linear-gradient(top, rgb(252, 20, 174), rgb(254, 9, 64));
+}
+
+#dashboard a{
+    color: white;
+}
+
+.controller-in-dashboard{
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.controller-in-dashboard:hover{
+    background: #9152f8;
+    background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
+    background: -o-linear-gradient(bottom, #7579ff, #b224ef);
+    background: -moz-linear-gradient(bottom, #7579ff, #b224ef);
+    background: linear-gradient(bottom, #7579ff, #b224ef);
+}
+
+.active{
+    background: #9152f8;
+    background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
+    background: -o-linear-gradient(bottom, #7579ff, #b224ef);
+    background: -moz-linear-gradient(bottom, #7579ff, #b224ef);
+    background: linear-gradient(bottom, #7579ff, #b224ef);
+}
+
+.infor-product{
+    display: inline-block;
+    vertical-align: top;
+    padding: 1rem;
+}
+
+.title-header{
+    display: inline-block;
+    padding: 0.4rem;
+    font-size: 1.5rem;
+}
+
+.animate-character
+{
+    text-transform: uppercase;
+    background-image: linear-gradient(
+            -225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
