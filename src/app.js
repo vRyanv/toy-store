@@ -1,7 +1,7 @@
 const path = require('path')
 
 //add library dev
-const morgan = require('morgan')
+// const morgan = require('morgan')
 
 //add library
 const express = require('express')
@@ -21,7 +21,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 //HTTP logger for dev
-app.use(morgan('combined'))
+// app.use(morgan('combined'))
 
 //Template engine
 app.set('view engine', 'ejs')
