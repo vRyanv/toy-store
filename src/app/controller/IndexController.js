@@ -5,11 +5,10 @@ class IndexController{
 
     //page
     indexPage(req, res){
-        if(req.shopId){
-            res.redirect('/product')
-        } else {
-            res.redirect('/shop')
-        }
+        indexModel.getProForCust().then((result) => {
+            res.render('home.ejs', {proList: result, quantity:result.length})
+        })
+
     }
 
     shop(res){
@@ -125,6 +124,17 @@ class IndexController{
                 }
             })
 
+    }
+
+    custSearchPro(req, res){
+        let proName = req.params.name
+        indexModel.custSearchPro(proName).then((result) => {
+            if(result.length !== 0){
+                res.send({status: 200, proList: result})
+            } else {
+                res.send({status: 400, mess: 'Not found product'})
+            }
+        })
     }
 }
 

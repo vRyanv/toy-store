@@ -20,6 +20,49 @@ class IndexModel{
     }
 
     //product
+    getProForCust(){
+        return database.query(`select p.pro_id,
+                                      c.cate_name,
+                                      s.sup_name,
+                                      sp.shop_name,
+                                      p.pro_name,
+                                      p.pro_image,
+                                      p.pro_price,
+                                      p.quantity
+                               from product as p,
+                                    category as c,
+                                    supplier as s,
+                                    shop as sp
+                               where c.cate_id = p.cate_id
+                                 and p.sup_id = s.sup_id
+                                 and p.shop_id = sp.shop_id`)
+            .then((result) => {
+                return result.rows
+            })
+    }
+
+    custSearchPro(proName){
+        return database.query(`select p.pro_id,
+                                      c.cate_name,
+                                      s.sup_name,
+                                      sp.shop_name,
+                                      p.pro_name,
+                                      p.pro_image,
+                                      p.pro_price,
+                                      p.quantity
+                               from product as p,
+                                    category as c,
+                                    supplier as s,
+                                    shop as sp
+                               where c.cate_id = p.cate_id
+                                 and p.sup_id = s.sup_id
+                                 and p.shop_id = sp.shop_id
+                                 and p.pro_name like '%${proName}%'`)
+            .then((result) => {
+                return result.rows
+            })
+    }
+
     getPro(shopId, proName){
         return database.query(`select p.pro_id,
                                       c.cate_name,

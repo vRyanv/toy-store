@@ -14,7 +14,7 @@ $(document).ready(function (){
             data: {shopName, address},
             success: function (data){
                 if(data.status === 200){
-                    location.href = '/'
+                    location.href = '/product'
                 } else {
                     animation()
                     alert('something wrong! create shop fail')

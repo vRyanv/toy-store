@@ -4,8 +4,9 @@ const upload = require('../middleware/storeFIle')
 
 function route(app)
 {
-    //default
-    app.get('/', (req, res, next)=> authentication.checkCookieAdmin(req, res, next), (req, res, next) => indexController.indexPage(req, res))
+    //customer
+    app.get('/', indexController.indexPage)
+    app.get('/customer-search-pro/:name', indexController.custSearchPro)
 
     //login
     app.get('/login', (req, res) => indexController.login(req, res))

@@ -16,7 +16,7 @@ $(document).ready(function (){
                 beForeSend: animation(),
                 success:  function (data){
                     if(data.status === 200){
-                        location.href = '/'
+                        location.href = '/product'
                     } else {
                         animation()
                         $('.error-login').css('display', 'block')
